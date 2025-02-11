@@ -1,0 +1,192 @@
+/* Importing font */
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
+
+/* CSS Variables */
+:root {
+  --font-family: "Tilt Neon", sans-serif;
+  --font-size: 1.8rem;
+  --font-weight: bold;
+  --border-style: 2px solid black;
+}
+
+/* Resetting margin and padding, and setting default font */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+
+/* Hiding overflow on body */
+body {
+  overflow: hidden;
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url("../images/background.jpg") repeat-x;
+  background-size: 100% 100%;
+}
+
+/* Setting font weight for game over and score container */
+.gameOver,
+#scoreCont {
+  font-weight: var(--font-weight);
+}
+
+/* Setting margin for game over */
+.gameOver {
+  margin-left: 20px;
+}
+
+/* Styling score container */
+#score,
+#level {
+  font-size: 1rem;
+  align-items: center;
+  border: var(--border-style);
+  border-radius: 10px;
+  padding: 2px;
+  margin-right: 40px;
+}
+
+/* Styling text */
+.text {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  align-items: center;
+  font-size: var(--font-size);
+}
+
+/* Setting width for image1 */
+.image1 {
+  width: 70px;
+}
+
+/* Styling dino */
+.dino {
+  background: url("../images/molandak.png") repeat-x;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 70px;
+  transition: left 0.1s linear;
+}
+
+/* Styling obstacle */
+.fireball,
+.dragon {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 66vh;
+  left: 100vw;
+}
+
+.fireball {
+  background: url("../images/bat.png") repeat-x;
+}
+
+.dragon {
+  background: url("../images/ghost.png") repeat-x;
+}
+
+/* Styling obstacle */
+.bomb,
+.jumpboost {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 66vh;
+  left: 100vw; /* Set the initial position of the obstacle to the right edge of the window */
+}
+
+.bomb {
+  background: url("../images/haha.png") repeat-x;
+}
+
+.jumpboost {
+  background: url("../images/jumpboost.png") repeat-x;
+}
+
+.start-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  display: block;
+}
+
+.instructions {
+  margin-bottom: 20px;
+}
+#startButton, #guideButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  width: 150px; /* Atur lebar tombol agar rapi */
+  align-self: center; /* Supaya tombol tetap di tengah */
+}
+
+.game-over-window {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.final-score {
+  color: white;
+  font-size: 2rem;
+}
+
+#restartButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+#guidePopup button {
+  margin-top: 10px;
+  padding: 5px 15px;
+  background-color: #f00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
