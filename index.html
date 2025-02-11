@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800, initial-scale=1.0, user-scalable=no">
+    <title>Paper Molandak runner</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" href="images/dino2.png">
+</head>
+
+<body>
+    <audio id="bgm" autoplay loop>
+        <source src="/bgm/bgm.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <script>
+        // Script untuk memastikan autoplay setelah interaksi pengguna
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('bgm');
+            audio.play();
+        }, { once: true });
+    </script>
+    <!-- Pop-up untuk peringatan perangkat mobile -->
+    <div id="mobileWarningPopup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <h2>Warning</h2>
+            <p>This website is not optimized for mobile devices. Please visit on a desktop for the best experience.</p>
+            <button id="closeMobileWarningButton">Close</button>
+        </div>
+    </div>
+    <audio id="bgm" autoplay loop>
+        <source src="bgm/bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="background"></div>
+    <div class="container">
+        <div id="playerItems">
+            <div id="Bomb">Haha: 0</div>
+            <div id="JumpBoost">JumpBoost: 0</div>
+        </div>
+        <div id="startScreen" class="start-screen">
+            <div class="content">
+                <button id="startButton">Start Game</button>
+                <button id="guideButton">Guide</button><br>
+                <p>Created by 0xmegumi</p><br>
+                <p>x : @eisbedog</p>
+            </div>
+            <div id="guidePopup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <h2>Guide</h2>
+                    <p>"Use the WASD keys to move your character and collect Haha Coins scattered around the map!"</p>
+                    <button id="closeGuideButton">Close</button>
+                </div>
+            </div>
+        </div>        
+        <div class="text">
+            <div id="level"></div>
+            <div id="score">Score: 0</div>
+        </div>
+        <div id="gameOverWindow" class="game-over-window">
+            <div class="final-score">Final Score: <span id="finalScore"></span></div>
+            <button id="restartButton">Play Again</button>
+        </div>
+    </div>
+
+    <script type="module" src="src/game.js"></script>
+</body>
+
+</html>
